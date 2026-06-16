@@ -593,7 +593,7 @@ function Section07() {
           </div>
           <div className="mt-6 space-y-4">
             <Stat n="30" label="conteúdos/semana" />
-            <Stat n="5–10" label="contas operando" />
+            <Stat n="3" label="contas operando (máx)" />
             <Stat n="150+" label="conteúdos/mês" />
             <Stat n="~30 min" label="por dia (monitorar)" />
           </div>

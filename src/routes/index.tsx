@@ -715,10 +715,10 @@ function Section08() {
           </div>
           <div className="rounded-2xl border border-primary/40 bg-primary/[0.04] p-6 shadow-[0_0_40px_-20px_var(--neon)]">
             <div className="font-mono text-xs tracking-widest text-primary">
-              5 CONTAS · POR MÊS
+              2 CONTAS · POR MÊS
             </div>
             <div className="mt-4 font-mono text-3xl font-semibold text-primary">
-              {fmt(fiveAccounts)}
+              {fmt(twoAccounts)}
             </div>
             <div className="mt-2 text-xs text-muted-foreground">
               Renda passiva real · ~2h/dia

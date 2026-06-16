@@ -768,7 +768,7 @@ function Section09() {
     <SectionShell id="09" tag="PROJEÇÃO" title="Progressão por Views & Conversão">
       <p className="mb-8 text-sm text-muted-foreground">
         Base: <span className="text-primary">30 posts/mês</span> ×{" "}
-        <span className="text-primary">1.500 views médias</span> · PDF R$ 29,90 +
+        <span className="text-primary">2.000 views médias (~2k/dia)</span> · PDF R$ 29,90 +
         upsell curso afiliado (R$ 80 comissão).
       </p>
 

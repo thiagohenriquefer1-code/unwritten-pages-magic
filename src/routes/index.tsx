@@ -407,18 +407,25 @@ function Section04() {
 function Section05() {
   const cats = [
     {
+      tag: "ESPIRITUALIDADE",
+      dot: "bg-fuchsia-500",
+      publico: "Mulheres 25–55, buscadores",
+      tickets: "R$ 27–67 (PDF) + R$ 197–497 (curso)",
+      produto: '"Manifestação em 21 Dias", numerologia, mapa astral',
+    },
+    {
+      tag: "MOTIVACIONAL / MINDSET",
+      dot: "bg-amber-500",
+      publico: "Homens 20–45, hustle / disciplina",
+      tickets: "R$ 19–47 (PDF) + R$ 297–697 (curso)",
+      produto: '"Rotina 5AM", disciplina, mentalidade alpha',
+    },
+    {
       tag: "BELEZA & SKINCARE",
       dot: "bg-rose-500",
       publico: "Mulheres 18–40",
       tickets: "R$ 30–100 (PDF) + R$ 200–500 (curso)",
       produto: '"Rotina Skin 30 Dias" ou curso de skincare',
-    },
-    {
-      tag: "EMAGRECIMENTO",
-      dot: "bg-emerald-500",
-      publico: "Mulheres 25–45",
-      tickets: "R$ 29 (PDF) + R$ 150–300 (curso)",
-      produto: '"Receitas Low Carb" ou plano de treino',
     },
     {
       tag: "FINANÇAS & RENDA EXTRA",
@@ -428,24 +435,24 @@ function Section05() {
       produto: '"Primeiros R$ 1k Online" ou curso de renda',
     },
     {
+      tag: "EMAGRECIMENTO",
+      dot: "bg-emerald-500",
+      publico: "Mulheres 25–45",
+      tickets: "R$ 29 (PDF) + R$ 150–300 (curso)",
+      produto: '"Receitas Low Carb" ou plano de treino',
+    },
+    {
       tag: "PRODUTIVIDADE",
       dot: "bg-violet-500",
       publico: "Profissionais 30–55",
       tickets: "R$ 49 (PDF) + R$ 300–600 (curso)",
       produto: '"Organiza Sua Vida" ou sistema de produção',
     },
-    {
-      tag: "SAÚDE & BEM-ESTAR",
-      dot: "bg-zinc-300",
-      publico: "Qualquer um",
-      tickets: "R$ 29 (PDF) + R$ 100–250 (curso)",
-      produto: '"Dormir Melhor em 21 Dias" ou meditação',
-    },
   ];
   return (
     <SectionShell id="05" tag="DESCOBERTA" title="Como Escolher Seu Nicho">
       <p className="mb-8 text-sm text-muted-foreground">
-        Nichos com maior conversão hoje.
+        Nichos com maior conversão hoje — <span className="text-primary">espiritualidade</span> e <span className="text-primary">motivacional</span> liderando.
       </p>
       <div className="grid gap-4 md:grid-cols-2">
         {cats.map((c) => (

@@ -757,7 +757,7 @@ function Section09() {
     { v: "+ 3", l: "cursos afiliados (R$ 120)" },
     { v: "+ R$ 360", l: "comissão de curso" },
     { v: "R$ 718,80", l: "1 conta/mês", highlight: true },
-    { v: "R$ 3.594,00", l: "5 contas/mês", highlight: true },
+    { v: "R$ 2.156,40", l: "3 contas/mês", highlight: true },
   ];
   return (
     <SectionShell id="09" tag="PROJEÇÃO" title="Cenário Base Realista">

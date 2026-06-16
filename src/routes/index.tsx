@@ -638,7 +638,7 @@ function Section08() {
   return (
     <SectionShell id="08" tag="SIMULADOR" title="Simule Sua Renda">
       <p className="mb-8 text-sm text-muted-foreground">
-        Base: ~2.500 views/dia, 10% clicam no link, {Math.round(conv.v * 100)}% convertem.
+        Base: ~2.000 views/dia, 10% clicam no link, {Math.round(conv.v * 100)}% convertem.
       </p>
 
       <div className="space-y-6">

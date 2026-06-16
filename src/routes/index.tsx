@@ -260,7 +260,7 @@ function Section01() {
 function Section02() {
   const steps = [
     { label: "Criar Conta Dark", sub: "Instagram novo, zero seguidores" },
-    { label: "Escolher Nicho", sub: "Beleza, Emagrecimento, Finanças, Produtividade, Saúde" },
+    { label: "Escolher Nicho", sub: "Desenvolvimento Pessoal, Espiritualidade, Persona de IA, Finanças" },
     { label: "Gerar Bio + Primeira Leva", sub: "Kit pronto pra começar" },
   ];
   return (
@@ -611,10 +611,10 @@ type Niche = {
 
 function Section08() {
   const niches: Niche[] = [
-    { key: "beleza", label: "Beleza", pdf: 50, course: 150 },
-    { key: "emagrecimento", label: "Emagrecimento", pdf: 30, course: 120 },
+    { key: "desenvolvimento", label: "Desenvolvimento Pessoal", pdf: 47, course: 197 },
+    { key: "espiritualidade", label: "Espiritualidade", pdf: 37, course: 147 },
+    { key: "persona-ia", label: "Persona de IA", pdf: 67, course: 297 },
     { key: "financas", label: "Finanças", pdf: 40, course: 250 },
-    { key: "saude", label: "Saúde", pdf: 25, course: 80 },
   ];
   const convOptions = [
     { key: "c1", label: "1% — conservador", v: 0.01 },

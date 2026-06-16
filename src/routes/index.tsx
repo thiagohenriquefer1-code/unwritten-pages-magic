@@ -378,6 +378,26 @@ function Section04() {
           </Fragment>
         ))}
       </div>
+      <div className="mt-8 grid gap-4 md:grid-cols-2">
+        <div className="rounded-2xl border border-primary/30 bg-primary/[0.04] p-6">
+          <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
+            Templates prontos
+          </div>
+          <p className="mt-3 text-sm leading-relaxed text-foreground/90">
+            Você não começa do zero. Temos templates de carrossel, reels e
+            página de venda pra duplicar e adaptar pro seu nicho em minutos.
+          </p>
+        </div>
+        <div className="rounded-2xl border border-primary/30 bg-primary/[0.04] p-6">
+          <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
+            Reciclagem de vídeos
+          </div>
+          <p className="mt-3 text-sm leading-relaxed text-foreground/90">
+            Reaproveitamos vídeos que já performaram — troca de capa, corte,
+            legenda e voz IA. Mesmo conteúdo, novo gancho, mais alcance.
+          </p>
+        </div>
+      </div>
     </SectionShell>
   );
 }

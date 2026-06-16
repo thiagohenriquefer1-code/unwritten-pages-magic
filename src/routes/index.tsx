@@ -745,47 +745,94 @@ function Section08() {
 /* ---------- 09 PROJEÇÃO REALISTA ---------- */
 
 function Section09() {
-  const rows = [
-    { v: "200", l: "perfil views/dia" },
-    { v: "10%", l: "clicam no link" },
-    { v: "20", l: "visitantes/dia" },
-    { v: "600", l: "visitantes/mês" },
-    { v: "2%", l: "conversão PDF" },
-    { v: "12", l: "vendas PDF/mês" },
-    { v: "R$ 29,90", l: "ticket PDF" },
-    { v: "R$ 358,80", l: "venda PDF/mês" },
-    { v: "+ 3", l: "cursos afiliados (R$ 120)" },
-    { v: "+ R$ 360", l: "comissão de curso" },
-    { v: "R$ 718,80", l: "1 conta/mês", highlight: true },
-    { v: "R$ 2.156,40", l: "3 contas/mês", highlight: true },
+  const base = [
+    { v: "30", l: "posts/mês" },
+    { v: "500", l: "views médias/post" },
+    { v: "15.000", l: "views/mês por conta" },
+    { v: "5%", l: "CTR pra bio/link" },
+    { v: "750", l: "cliques na página/mês" },
   ];
+  const ticket = 29.9;
+  const clicks = 750;
+  const scenarios = [
+    { conv: 0.5 },
+    { conv: 1 },
+    { conv: 2 },
+    { conv: 3 },
+    { conv: 5 },
+  ].map((s) => {
+    const sales = Math.round((clicks * s.conv) / 100);
+    const rev1 = sales * ticket;
+    return {
+      conv: `${s.conv}%`,
+      sales,
+      rev1: rev1.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }),
+      rev3: (rev1 * 3).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }),
+    };
+  });
+
   return (
-    <SectionShell id="09" tag="PROJEÇÃO" title="Cenário Base Realista">
+    <SectionShell id="09" tag="PROJEÇÃO" title="Progressão por Views & Conversão">
       <p className="mb-8 text-sm text-muted-foreground">
-        PDF de R$ 29,90 + upsell de curso afiliado (40% de comissão).
+        Base: <span className="text-primary">30 posts/mês</span> ×{" "}
+        <span className="text-primary">500 views médias</span> · PDF R$ 29,90.
       </p>
+
       <div className="overflow-hidden rounded-2xl border border-border bg-card">
-        {rows.map((r, i) => (
+        {base.map((r, i) => (
           <div
             key={r.l}
-            className={`flex items-baseline justify-between gap-6 border-b border-border/60 px-6 py-4 last:border-b-0 ${
-              r.highlight ? "bg-primary/5" : ""
-            }`}
+            className="flex items-baseline justify-between gap-6 border-b border-border/60 px-6 py-4 last:border-b-0"
           >
-            <span
-              className={`font-mono text-lg ${r.highlight ? "text-primary text-2xl font-semibold" : "text-foreground"}`}
-            >
-              {r.v}
-            </span>
+            <span className="font-mono text-lg text-foreground">{r.v}</span>
             <span className="text-xs uppercase tracking-wider text-muted-foreground">
               {r.l}
             </span>
             <ArrowDown
-              className={`h-3.5 w-3.5 ${i === rows.length - 1 ? "opacity-0" : "text-primary/60"}`}
+              className={`h-3.5 w-3.5 ${
+                i === base.length - 1 ? "opacity-0" : "text-primary/60"
+              }`}
             />
           </div>
         ))}
       </div>
+
+      <div className="mt-8 overflow-hidden rounded-2xl border border-primary/30 bg-card">
+        <div className="grid grid-cols-4 border-b border-border bg-primary/[0.04] px-6 py-3 font-mono text-[11px] uppercase tracking-widest text-primary">
+          <span>Conversão</span>
+          <span>Vendas/mês</span>
+          <span>1 conta</span>
+          <span>3 contas</span>
+        </div>
+        {scenarios.map((s) => (
+          <div
+            key={s.conv}
+            className="grid grid-cols-4 items-baseline border-b border-border/60 px-6 py-4 last:border-b-0"
+          >
+            <span className="font-mono text-base text-foreground">{s.conv}</span>
+            <span className="font-mono text-base text-foreground/80">
+              {s.sales}
+            </span>
+            <span className="font-mono text-base text-foreground/80">
+              {s.rev1}
+            </span>
+            <span className="font-mono text-lg font-semibold text-primary">
+              {s.rev3}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <p className="mt-6 text-xs text-muted-foreground">
+        Conversões realistas de PDF baixo ticket ficam entre 1–3%. Acima de 5% é
+        cenário otimista (oferta muito bem alinhada com o público).
+      </p>
     </SectionShell>
   );
 }

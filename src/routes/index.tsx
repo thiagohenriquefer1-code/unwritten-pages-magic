@@ -260,7 +260,7 @@ function Section01() {
 function Section02() {
   const steps = [
     { label: "Criar Conta Dark", sub: "Instagram novo, zero seguidores" },
-    { label: "Escolher Nicho", sub: "Beleza, Emagrecimento, Finanças, Produtividade, Saúde" },
+    { label: "Escolher Nicho", sub: "Desenvolvimento Pessoal, Espiritualidade, Persona de IA, Finanças" },
     { label: "Gerar Bio + Primeira Leva", sub: "Kit pronto pra começar" },
   ];
   return (

@@ -565,9 +565,10 @@ function Section07() {
             Primeiros 30 dias
           </div>
           <div className="mt-6 space-y-4">
-            <Stat n="5" label="conteúdos/semana" />
-            <Stat n="20" label="conteúdos/mês" />
-            <Stat n="~40 min" label="por dia (~3h/sem)" />
+            <Stat n="1–2" label="conteúdos/dia" />
+            <Stat n="7–14" label="conteúdos/semana" />
+            <Stat n="30–60" label="conteúdos/mês" />
+            <Stat n="~40 min" label="por dia" />
           </div>
         </div>
         <div className="rounded-2xl border border-primary/40 bg-primary/[0.04] p-6 shadow-[0_0_40px_-20px_var(--neon)]">
@@ -578,11 +579,12 @@ function Section07() {
             Depois de validar
           </div>
           <div className="mt-6 space-y-4">
-            <Stat n="15" label="conteúdos/semana" />
+            <Stat n="5–10" label="conteúdos/dia" />
             <Stat n="2" label="contas rodando (máx)" />
-            <Stat n="45" label="conteúdos/mês" />
+            <Stat n="150–300" label="conteúdos/mês" />
             <Stat n="~2h" label="por dia" />
           </div>
+
         </div>
       </div>
     </SectionShell>

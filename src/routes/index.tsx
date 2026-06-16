@@ -733,14 +733,14 @@ function Section08() {
 function Section09() {
   const base = [
     { v: "30", l: "posts/mês" },
-    { v: "1.500", l: "views médias/post" },
-    { v: "45.000", l: "views/mês por conta" },
+    { v: "2.000", l: "views médias/post (~2k/dia)" },
+    { v: "60.000", l: "views/mês por conta" },
     { v: "8%", l: "CTR pra bio/link" },
-    { v: "3.600", l: "cliques na página/mês" },
+    { v: "4.800", l: "cliques na página/mês" },
   ];
   // PDF R$ 29,90 + upsell de curso afiliado (30% pegam, comissão ~R$ 80)
   const ticket = 29.9 + 0.3 * 80;
-  const clicks = 3600;
+  const clicks = 4800;
   const scenarios = [
     { conv: 1 },
     { conv: 2 },
@@ -768,7 +768,7 @@ function Section09() {
     <SectionShell id="09" tag="PROJEÇÃO" title="Progressão por Views & Conversão">
       <p className="mb-8 text-sm text-muted-foreground">
         Base: <span className="text-primary">30 posts/mês</span> ×{" "}
-        <span className="text-primary">1.500 views médias</span> · PDF R$ 29,90 +
+        <span className="text-primary">2.000 views médias (~2k/dia)</span> · PDF R$ 29,90 +
         upsell curso afiliado (R$ 80 comissão).
       </p>
 

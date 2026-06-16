@@ -452,7 +452,7 @@ function Section05() {
   return (
     <SectionShell id="05" tag="DESCOBERTA" title="Como Escolher Seu Nicho">
       <p className="mb-8 text-sm text-muted-foreground">
-        Nichos com maior conversão hoje.
+        Nichos com maior conversão hoje — <span className="text-primary">espiritualidade</span> e <span className="text-primary">motivacional</span> liderando.
       </p>
       <div className="grid gap-4 md:grid-cols-2">
         {cats.map((c) => (

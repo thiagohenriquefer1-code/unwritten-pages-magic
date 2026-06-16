@@ -733,14 +733,14 @@ function Section08() {
 function Section09() {
   const base = [
     { v: "30", l: "posts/mês" },
-    { v: "1.500", l: "views médias/post" },
-    { v: "45.000", l: "views/mês por conta" },
+    { v: "2.000", l: "views médias/post (~2k/dia)" },
+    { v: "60.000", l: "views/mês por conta" },
     { v: "8%", l: "CTR pra bio/link" },
-    { v: "3.600", l: "cliques na página/mês" },
+    { v: "4.800", l: "cliques na página/mês" },
   ];
   // PDF R$ 29,90 + upsell de curso afiliado (30% pegam, comissão ~R$ 80)
   const ticket = 29.9 + 0.3 * 80;
-  const clicks = 3600;
+  const clicks = 4800;
   const scenarios = [
     { conv: 1 },
     { conv: 2 },

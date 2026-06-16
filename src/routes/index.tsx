@@ -2,9 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect, useRef, Fragment } from "react";
 import {
   UserPlus,
-  ShoppingBag,
-  Video,
+  Target,
+  Sparkles as SparklesIcon,
+  FileText,
+  Image as ImageIcon,
+  PenLine,
+  Layout,
+  Share2,
   Search,
+  ShoppingBag,
   Link2,
   PlayCircle,
   DollarSign,
@@ -12,7 +18,6 @@ import {
   ArrowRight,
   ArrowDown,
   Sparkles,
-  Image as ImageIcon,
   Film,
   Wand2,
 } from "lucide-react";
@@ -20,17 +25,17 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "TikTok Shop com IA — Mini Aula" },
+      { title: "Instagram Dark com IA — Mini Aula" },
       {
         name: "description",
         content:
-          "Como criar uma operação de conteúdo automatizada com IA para promover produtos físicos e ganhar comissões no TikTok Shop.",
+          "Como ganhar com Instagram Dark usando IA: conteúdo automatizado, página de venda e produtos digitais ou afiliados rodando sozinhos.",
       },
-      { property: "og:title", content: "TikTok Shop com IA — Mini Aula" },
+      { property: "og:title", content: "Instagram Dark com IA — Mini Aula" },
       {
         property: "og:description",
         content:
-          "Como criar uma operação de conteúdo automatizada com IA para promover produtos físicos e ganhar comissões no TikTok Shop.",
+          "Como ganhar com Instagram Dark usando IA: conteúdo automatizado, página de venda e produtos digitais ou afiliados rodando sozinhos.",
       },
     ],
   }),
@@ -43,9 +48,9 @@ const sectionTags = [
   { id: "03", label: "conteúdo" },
   { id: "04", label: "pipeline" },
   { id: "05", label: "descoberta" },
-  { id: "06", label: "afiliação" },
-  { id: "07", label: "escala" },
-  { id: "08", label: "monetização" },
+  { id: "06", label: "operação" },
+  { id: "07", label: "volume" },
+  { id: "08", label: "simulador" },
   { id: "09", label: "projeção" },
   { id: "10", label: "ciclo" },
   { id: "11", label: "mapa" },
@@ -95,7 +100,6 @@ function Reveal({
 function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground">
-      {/* Top nav */}
       <nav className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a href="#01" className="font-mono text-xs tracking-widest text-primary">
@@ -129,7 +133,7 @@ function Index() {
 
       <footer className="border-t border-border/60 py-10">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 font-mono text-xs text-muted-foreground">
-          <span>● TIKTOK.SHOP / IA</span>
+          <span>● INSTAGRAM.DARK / IA</span>
           <span>{new Date().getFullYear()} — operação completa</span>
         </div>
       </footer>
@@ -141,22 +145,18 @@ function Index() {
 
 function SectionShell({
   id,
-  num,
   tag,
   title,
   children,
 }: {
   id: string;
-  num: string;
+  num?: string;
   tag: string;
   title: string;
   children: React.ReactNode;
 }) {
   return (
-    <section
-      id={id}
-      className="relative scroll-mt-20 px-6 py-28 md:py-40"
-    >
+    <section id={id} className="relative scroll-mt-20 px-6 py-28 md:py-40">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.35]"
         style={{
@@ -201,18 +201,18 @@ function Connector() {
   );
 }
 
-/* ---------- 01 ---------- */
+/* ---------- 01 HERO ---------- */
 
 function Section01() {
   const steps = [
-    { icon: UserPlus, label: "Criar Conta" },
-    { icon: ShoppingBag, label: "Liberar TikTok Shop" },
-    { icon: Video, label: "Produzir Conteúdo" },
-    { icon: Search, label: "Minerar Produtos" },
-    { icon: Link2, label: "Afiliar Produto" },
-    { icon: PlayCircle, label: "Publicar" },
+    { icon: UserPlus, label: "Criar Conta Dark" },
+    { icon: Target, label: "Escolher Nicho" },
+    { icon: SparklesIcon, label: "Gerar Bio + Conteúdo IA" },
+    { icon: FileText, label: "Página de Venda" },
+    { icon: ShoppingBag, label: "PDF Próprio ou Afiliado" },
+    { icon: PlayCircle, label: "Publicar e Postar" },
     { icon: DollarSign, label: "Monetizar" },
-    { icon: Rocket, label: "Escalar" },
+    { icon: Rocket, label: "Escalar Contas" },
   ];
   return (
     <section
@@ -232,11 +232,15 @@ function Section01() {
           <span>Mini aula</span>
         </div>
         <h1 className="mt-6 text-5xl font-bold leading-[1] tracking-tight md:text-7xl">
-          TikTok Shop com IA
+          Ganhar com Instagram Dark
         </h1>
-        <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-          Como criar uma operação de conteúdo automatizada para promover produtos físicos e
-          receber comissões através do TikTok Shop.
+        <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground/90 md:text-xl">
+          Sem aparecer, sem conhecer ninguém. Só conteúdo IA, página de venda
+          feita com IA e produtos pra vender.
+        </p>
+        <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
+          Como começar uma operação de conteúdo + venda que roda sozinha
+          enquanto você dorme.
         </p>
         <div className="mt-16 flex flex-col items-center py-4">
           {steps.map((s, i) => (
@@ -251,29 +255,33 @@ function Section01() {
   );
 }
 
-/* ---------- 02 ---------- */
+/* ---------- 02 FUNDAÇÃO ---------- */
 
 function Section02() {
+  const steps = [
+    { label: "Criar Conta Dark", sub: "Instagram novo, zero seguidores" },
+    { label: "Escolher Nicho", sub: "Beleza, Emagrecimento, Finanças, Produtividade, Saúde" },
+    { label: "Gerar Bio + Primeira Leva", sub: "Kit pronto pra começar" },
+  ];
   return (
-    <SectionShell id="02" num="02" tag="FUNDAÇÃO" title="Estrutura Inicial">
+    <SectionShell id="02" tag="FUNDAÇÃO" title="Estrutura Inicial">
       <div className="rounded-2xl border border-border bg-card p-8">
         <div className="font-mono text-xs tracking-widest text-muted-foreground">
-          TikTok
+          Instagram Dark
         </div>
         <div className="mt-6 space-y-4">
-          {["Criar Conta", "Alcançar 1.000 Seguidores", "Liberar TikTok Shop"].map(
-            (label, i) => (
-              <div
-                key={label}
-                className="flex items-center gap-4 rounded-xl border border-border/70 bg-background/50 p-4"
-              >
-                <span className="font-mono text-xs text-primary">
-                  0{i + 1}
-                </span>
-                <span className="text-sm text-foreground/90">{label}</span>
+          {steps.map((s, i) => (
+            <div
+              key={s.label}
+              className="flex items-start gap-4 rounded-xl border border-border/70 bg-background/50 p-4"
+            >
+              <span className="font-mono text-xs text-primary">0{i + 1}</span>
+              <div>
+                <div className="text-sm font-medium text-foreground/90">{s.label}</div>
+                <div className="mt-1 text-xs text-muted-foreground">{s.sub}</div>
               </div>
-            ),
-          )}
+            </div>
+          ))}
         </div>
         <div className="mt-8">
           <div className="mb-2 flex items-center justify-between font-mono text-xs text-muted-foreground">
@@ -283,7 +291,7 @@ function Section02() {
           <div className="h-1.5 w-full overflow-hidden rounded-full bg-border">
             <div
               className="h-full rounded-full bg-primary shadow-[0_0_12px_var(--neon)]"
-              style={{ width: "66%" }}
+              style={{ width: "75%" }}
             />
           </div>
         </div>
@@ -292,33 +300,33 @@ function Section02() {
   );
 }
 
-/* ---------- 03 ---------- */
+/* ---------- 03 CONTEÚDO / ABORDAGENS ---------- */
 
 function Section03() {
   const opts = [
     {
-      title: "Minha Imagem",
+      title: "PDF Próprio",
       desc:
-        "Você grava com seu próprio rosto. Maior conexão e autoridade. Ideal para nichos onde confiança importa.",
-      icon: Video,
+        "Você cria o PDF com IA ou compra template pronto. Coloca na página de venda. Lucro 100% seu. Margem: R$ 30–50 por venda.",
+      icon: FileText,
     },
     {
-      title: "Avatar IA",
+      title: "Afiliar Curso",
       desc:
-        "Avatar gerado por IA fala por você. Permite escalar volume sem aparecer. Ótimo para múltiplas contas.",
+        "Promove curso de terceiro. Comissão de 20–50% por venda, sem lidar com entrega. Lucro: R$ 50–200 por venda.",
+      icon: Link2,
+    },
+    {
+      title: "Híbrido",
+      desc:
+        "PDF seu de R$29,90 + upsell de curso afiliado. Maior conversão. Lucro mixado: R$ 30 + R$ 80 = R$ 110 por lead qualificado.",
       icon: Sparkles,
-    },
-    {
-      title: "Vídeos Existentes",
-      desc:
-        "Reaproveite cortes, edits e referências já gravados. Velocidade máxima e custo zero de produção.",
-      icon: Film,
     },
   ];
   return (
-    <SectionShell id="03" num="03" tag="CONTEÚDO" title="Produção de Conteúdo">
+    <SectionShell id="03" tag="CONTEÚDO" title="Como Você Vai Monetizar">
       <p className="mb-8 text-sm text-muted-foreground">
-        Como vamos produzir os vídeos?
+        Três abordagens — escolha uma ou combine.
       </p>
       <div className="grid gap-4 md:grid-cols-3">
         {opts.map((o) => (
@@ -338,18 +346,22 @@ function Section03() {
   );
 }
 
-/* ---------- 04 ---------- */
+/* ---------- 04 PIPELINE ---------- */
 
 function Section04() {
   const steps = [
-    { title: "Imagem", desc: "Foto base ou referência", icon: ImageIcon },
-    { title: "Flow", desc: "Criar imagem ou substituir elementos", icon: Wand2 },
-    { title: "Kling AI", desc: "Gerar movimento e câmera", icon: Sparkles },
-    { title: "Vídeo Final", desc: "Pronto para postar", icon: PlayCircle },
+    { title: "Tema/Ideia", desc: "Gancho ou dica do nicho", icon: Wand2 },
+    { title: "Imagem IA", desc: "Midjourney, APOB, Kling", icon: ImageIcon },
+    { title: "Copy IA", desc: "ChatGPT/Claude com persona", icon: PenLine },
+    { title: "Carousel", desc: "Canva ou Lovable AI", icon: Layout },
+    { title: "Publicar + Link", desc: "Bio/sticker pra página", icon: Share2 },
   ];
   return (
-    <SectionShell id="04" num="04" tag="PIPELINE" title="Fluxo de Produção com IA">
-      <div className="grid gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] md:items-center">
+    <SectionShell id="04" tag="PIPELINE" title="Fluxo 100% IA">
+      <p className="mb-8 text-sm text-muted-foreground">
+        Tempo total por conteúdo: <span className="text-primary">10–15 min</span>.
+      </p>
+      <div className="grid gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr_auto_1fr] md:items-center">
         {steps.map((s, i) => (
           <Fragment key={s.title}>
             <div className="rounded-2xl border border-border bg-card p-5">
@@ -370,85 +382,127 @@ function Section04() {
   );
 }
 
-/* ---------- 05 ---------- */
+/* ---------- 05 DESCOBERTA / NICHOS ---------- */
 
 function Section05() {
   const cats = [
-    { tag: "BELEZA", items: ["Gloss", "Skin Care", "Babyliss", "Escovas"] },
     {
-      tag: "MODA",
-      items: ["Roupas Femininas", "Óculos", "Bolsas", "Relógios", "Botas"],
+      tag: "BELEZA & SKINCARE",
+      dot: "bg-rose-500",
+      publico: "Mulheres 18–40",
+      tickets: "R$ 30–100 (PDF) + R$ 200–500 (curso)",
+      produto: '"Rotina Skin 30 Dias" ou curso de skincare',
     },
     {
-      tag: "CASA",
-      items: ["Organizadores", "Produtos de Limpeza", "Utensílios de Cozinha"],
+      tag: "EMAGRECIMENTO",
+      dot: "bg-emerald-500",
+      publico: "Mulheres 25–45",
+      tickets: "R$ 29 (PDF) + R$ 150–300 (curso)",
+      produto: '"Receitas Low Carb" ou plano de treino',
     },
     {
-      tag: "ACESSÓRIOS ELETRÔNICOS",
-      items: ["Ring Light", "Fones", "Suporte de Celular"],
+      tag: "FINANÇAS & RENDA EXTRA",
+      dot: "bg-sky-500",
+      publico: "Homens e mulheres 25–50",
+      tickets: "R$ 39 (PDF) + R$ 400–800 (curso)",
+      produto: '"Primeiros R$ 1k Online" ou curso de renda',
     },
-    { tag: "PET", items: ["Brinquedos", "Produtos Engraçados"] },
+    {
+      tag: "PRODUTIVIDADE",
+      dot: "bg-violet-500",
+      publico: "Profissionais 30–55",
+      tickets: "R$ 49 (PDF) + R$ 300–600 (curso)",
+      produto: '"Organiza Sua Vida" ou sistema de produção',
+    },
+    {
+      tag: "SAÚDE & BEM-ESTAR",
+      dot: "bg-zinc-300",
+      publico: "Qualquer um",
+      tickets: "R$ 29 (PDF) + R$ 100–250 (curso)",
+      produto: '"Dormir Melhor em 21 Dias" ou meditação',
+    },
   ];
   return (
-    <SectionShell id="05" num="05" tag="DESCOBERTA" title="Mineração de Produtos">
+    <SectionShell id="05" tag="DESCOBERTA" title="Como Escolher Seu Nicho">
+      <p className="mb-8 text-sm text-muted-foreground">
+        Nichos com maior conversão hoje.
+      </p>
       <div className="grid gap-4 md:grid-cols-2">
         {cats.map((c) => (
-          <div
-            key={c.tag}
-            className="rounded-2xl border border-border bg-card p-6"
-          >
-            <div className="font-mono text-xs tracking-widest text-primary">
-              {c.tag}
+          <div key={c.tag} className="rounded-2xl border border-border bg-card p-6">
+            <div className="flex items-center gap-2">
+              <span className={`h-2 w-2 rounded-full ${c.dot}`} />
+              <div className="font-mono text-xs tracking-widest text-primary">
+                {c.tag}
+              </div>
             </div>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {c.items.map((it) => (
-                <span
-                  key={it}
-                  className="rounded-full border border-border bg-background/50 px-3 py-1 text-xs text-foreground/80"
-                >
-                  {it}
-                </span>
-              ))}
+            <div className="mt-4 space-y-2 text-xs text-muted-foreground">
+              <div>
+                <span className="text-foreground/70">Público:</span> {c.publico}
+              </div>
+              <div>
+                <span className="text-foreground/70">Tickets:</span> {c.tickets}
+              </div>
+              <div>
+                <span className="text-foreground/70">Produto:</span> {c.produto}
+              </div>
             </div>
           </div>
         ))}
+      </div>
+      <div className="mt-8 rounded-2xl border border-border bg-card p-6">
+        <div className="font-mono text-xs tracking-widest text-muted-foreground">
+          FERRAMENTAS DE VALIDAÇÃO
+        </div>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {["TikTok Discover", "Pinterest Trends", "Google Trends"].map((it) => (
+            <span
+              key={it}
+              className="rounded-full border border-border bg-background/50 px-3 py-1 text-xs text-foreground/80"
+            >
+              {it}
+            </span>
+          ))}
+        </div>
       </div>
     </SectionShell>
   );
 }
 
-/* ---------- 06 ---------- */
+/* ---------- 06 OPERAÇÃO / VENDA ---------- */
 
 function Section06() {
   const steps = [
     {
-      title: "Produto Encontrado",
-      desc: "Validado no TikTok Shop pelo histórico de vendas.",
+      title: "Página de Venda Pronta",
+      desc: "Lovable com AI gera em 5 min (ou Leadpages template).",
     },
     {
-      title: "Solicitar Afiliação",
-      desc: "Pedido direto no painel de Affiliate Center.",
+      title: "PDF Hospedado",
+      desc: "Sendowl ou Hotmart — entrega automática na compra.",
     },
     {
-      title: "Aprovação",
-      desc: "Lojista libera comissão e amostra opcional.",
+      title: "Link da Bio",
+      desc: "Instagram > bio > link.dasuapagina.",
     },
     {
-      title: "Link Gerado",
-      desc: "Link rastreável pronto para colar em qualquer vídeo.",
+      title: "Sticker no Reel/Carousel",
+      desc: "Clique direto leva pra página de venda.",
+    },
+    {
+      title: "Automação de Email",
+      desc: "EmailMarketing básico responde interesse e faz upsell.",
     },
   ];
   return (
-    <SectionShell id="06" num="06" tag="OPERAÇÃO" title="Afiliação">
+    <SectionShell id="06" tag="OPERAÇÃO" title="Como Vender">
       <div className="space-y-3">
         {steps.map((s, i) => (
           <div
             key={s.title}
             className="flex items-start gap-5 rounded-2xl border border-border bg-card p-5"
           >
-            <span className="font-mono text-xs text-primary">
-              0{i + 1}
-            </span>
+            <span className="font-mono text-xs text-primary">0{i + 1}</span>
             <div>
               <div className="text-base font-semibold">{s.title}</div>
               <div className="mt-1 text-sm text-muted-foreground">{s.desc}</div>
@@ -456,34 +510,65 @@ function Section06() {
           </div>
         ))}
       </div>
+      <div className="mt-8 rounded-2xl border border-primary/30 bg-primary/[0.04] p-6">
+        <div className="font-mono text-xs tracking-widest text-primary">
+          FLUXO DO CLIENTE
+        </div>
+        <p className="mt-3 text-sm leading-relaxed text-foreground/90">
+          Vê post IA → clica no sticker/bio → cai na página → lê copy + vê
+          número de vendas → compra PDF → recebe automático → entra no email
+          do upsell do curso.
+        </p>
+      </div>
     </SectionShell>
   );
 }
 
-/* ---------- 07 ---------- */
+/* ---------- 07 VOLUME ---------- */
 
 function Section07() {
   return (
-    <SectionShell id="07" num="07" tag="VOLUME" title="Produção em Escala">
-      <div className="grid gap-4 md:grid-cols-2">
+    <SectionShell id="07" tag="VOLUME" title="Produção em Escala">
+      <div className="grid gap-4 md:grid-cols-3">
         <div className="rounded-2xl border border-border bg-card p-6">
           <div className="font-mono text-xs tracking-widest text-muted-foreground">
-            CONSERVADOR
+            INICIANTE
+          </div>
+          <div className="mt-2 text-[11px] text-muted-foreground">
+            Primeiros 30 dias
           </div>
           <div className="mt-6 space-y-4">
-            <Stat n="3" label="conteúdos por dia" />
-            <Stat n="90" label="conteúdos por mês" />
+            <Stat n="5" label="conteúdos/semana" />
+            <Stat n="20" label="conteúdos/mês" />
+            <Stat n="~40 min" label="por dia (~3h/sem)" />
+          </div>
+        </div>
+        <div className="rounded-2xl border border-border bg-card p-6">
+          <div className="font-mono text-xs tracking-widest text-muted-foreground">
+            ESCALADO
+          </div>
+          <div className="mt-2 text-[11px] text-muted-foreground">
+            Depois de validar
+          </div>
+          <div className="mt-6 space-y-4">
+            <Stat n="15" label="conteúdos/semana" />
+            <Stat n="3" label="contas rodando" />
+            <Stat n="45" label="conteúdos/mês" />
+            <Stat n="~2h" label="por dia" />
           </div>
         </div>
         <div className="rounded-2xl border border-primary/40 bg-primary/[0.04] p-6 shadow-[0_0_40px_-20px_var(--neon)]">
           <div className="font-mono text-xs tracking-widest text-primary">
-            ESCALA
+            AUTOMÁTICO
           </div>
-          <div className="mt-6 grid grid-cols-2 gap-4">
-            <Stat n="10" label="conteúdos por dia" />
-            <Stat n="5" label="contas operando" />
-            <Stat n="50" label="conteúdos por dia" />
-            <Stat n="1.500" label="conteúdos por mês" />
+          <div className="mt-2 text-[11px] text-muted-foreground">
+            Sistema pronto
+          </div>
+          <div className="mt-6 space-y-4">
+            <Stat n="30" label="conteúdos/semana" />
+            <Stat n="5–10" label="contas operando" />
+            <Stat n="150+" label="conteúdos/mês" />
+            <Stat n="~30 min" label="por dia (monitorar)" />
           </div>
         </div>
       </div>
@@ -494,87 +579,164 @@ function Section07() {
 function Stat({ n, label }: { n: string; label: string }) {
   return (
     <div>
-      <div className="font-mono text-3xl font-semibold text-foreground">
-        {n}
-      </div>
+      <div className="font-mono text-3xl font-semibold text-foreground">{n}</div>
       <div className="mt-1 text-xs text-muted-foreground">{label}</div>
     </div>
   );
 }
 
-/* ---------- 08 ---------- */
+/* ---------- 08 SIMULADOR ---------- */
+
+type Niche = {
+  key: string;
+  label: string;
+  pdf: number;
+  course: number;
+};
 
 function Section08() {
-  const tiers = [3, 5, 10, 20];
-  const [sel, setSel] = useState(10);
-  const venda = 10000;
-  const ganho = (venda * sel) / 100;
+  const niches: Niche[] = [
+    { key: "beleza", label: "Beleza", pdf: 50, course: 150 },
+    { key: "emagrecimento", label: "Emagrecimento", pdf: 30, course: 120 },
+    { key: "financas", label: "Finanças", pdf: 40, course: 250 },
+    { key: "saude", label: "Saúde", pdf: 25, course: 80 },
+  ];
+  const convOptions = [
+    { key: "c1", label: "1% — conservador", v: 0.01 },
+    { key: "c2", label: "2% — realista", v: 0.02 },
+    { key: "c3", label: "3% — agressivo", v: 0.03 },
+  ];
+
+  const [niche, setNiche] = useState<Niche>(niches[0]);
+  const [conv, setConv] = useState(convOptions[1]);
+
+  // Assumptions: 200 perfil views/dia, 10% cliques no link
+  const visitorsDay = 200 * 0.1; // 20
+  const visitorsMonth = visitorsDay * 30; // 600
+  const pdfSales = Math.round(visitorsMonth * conv.v);
+  const courseSales = Math.round(pdfSales * 0.3); // 30% pega upsell
+  const oneAccount = pdfSales * niche.pdf + courseSales * niche.course;
+  const fiveAccounts = oneAccount * 5;
+  const fmt = (n: number) =>
+    "R$ " + n.toLocaleString("pt-BR", { maximumFractionDigits: 0 });
+
   return (
-    <SectionShell id="08" num="08" tag="ECONOMIA" title="Entendendo a Monetização">
+    <SectionShell id="08" tag="SIMULADOR" title="Simule Sua Renda">
       <p className="mb-8 text-sm text-muted-foreground">
-        Cada produto tem uma comissão diferente. Clique em uma faixa para simular.
+        Base: ~200 views/dia, 10% clicam no link, {Math.round(conv.v * 100)}% convertem.
       </p>
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-        {tiers.map((t) => {
-          const active = sel === t;
-          return (
-            <button
-              key={t}
-              onClick={() => setSel(t)}
-              className={`rounded-2xl border p-5 text-left transition-all ${
-                active
-                  ? "border-primary bg-primary/10 shadow-[0_0_30px_-10px_var(--neon)]"
-                  : "border-border bg-card hover:border-primary/40"
-              }`}
-            >
-              <div
-                className={`font-mono text-3xl font-semibold ${active ? "text-primary" : "text-foreground"}`}
-              >
-                {t}%
-              </div>
-              <div className="mt-2 text-xs text-muted-foreground">
-                Faixa de comissão
-              </div>
-            </button>
-          );
-        })}
-      </div>
-      <div className="mt-6 rounded-2xl border border-border bg-card p-6">
-        <div className="font-mono text-xs tracking-widest text-muted-foreground">
-          COMISSÃO SELECIONADA · {sel}%
+
+      <div className="space-y-6">
+        <div>
+          <div className="mb-3 font-mono text-xs tracking-widest text-muted-foreground">
+            ESCOLHA SEU NICHO
+          </div>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+            {niches.map((n) => {
+              const active = niche.key === n.key;
+              return (
+                <button
+                  key={n.key}
+                  onClick={() => setNiche(n)}
+                  className={`rounded-2xl border p-4 text-left transition-all ${
+                    active
+                      ? "border-primary bg-primary/10 shadow-[0_0_30px_-10px_var(--neon)]"
+                      : "border-border bg-card hover:border-primary/40"
+                  }`}
+                >
+                  <div
+                    className={`text-base font-semibold ${active ? "text-primary" : "text-foreground"}`}
+                  >
+                    {n.label}
+                  </div>
+                  <div className="mt-1 font-mono text-[11px] text-muted-foreground">
+                    PDF R$ {n.pdf} · Curso R$ {n.course}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
         </div>
-        <div className="mt-4 text-base text-foreground/90">
-          Em{" "}
-          <span className="font-mono text-primary">
-            R$ {venda.toLocaleString("pt-BR")}
-          </span>{" "}
-          vendidos → você recebe{" "}
-          <span className="font-mono text-2xl font-semibold text-primary">
-            R$ {ganho.toLocaleString("pt-BR")}
-          </span>
+
+        <div>
+          <div className="mb-3 font-mono text-xs tracking-widest text-muted-foreground">
+            ESCOLHA SUA CONVERSÃO
+          </div>
+          <div className="grid grid-cols-3 gap-3">
+            {convOptions.map((c) => {
+              const active = conv.key === c.key;
+              return (
+                <button
+                  key={c.key}
+                  onClick={() => setConv(c)}
+                  className={`rounded-2xl border p-4 text-left transition-all ${
+                    active
+                      ? "border-primary bg-primary/10 shadow-[0_0_30px_-10px_var(--neon)]"
+                      : "border-border bg-card hover:border-primary/40"
+                  }`}
+                >
+                  <div
+                    className={`text-base font-semibold ${active ? "text-primary" : "text-foreground"}`}
+                  >
+                    {c.label}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border border-border bg-card p-6">
+            <div className="font-mono text-xs tracking-widest text-muted-foreground">
+              1 CONTA · POR MÊS
+            </div>
+            <div className="mt-4 font-mono text-3xl font-semibold text-primary">
+              {fmt(oneAccount)}
+            </div>
+            <div className="mt-2 text-xs text-muted-foreground">
+              {pdfSales} vendas PDF + {courseSales} cursos afiliados
+            </div>
+          </div>
+          <div className="rounded-2xl border border-primary/40 bg-primary/[0.04] p-6 shadow-[0_0_40px_-20px_var(--neon)]">
+            <div className="font-mono text-xs tracking-widest text-primary">
+              5 CONTAS · POR MÊS
+            </div>
+            <div className="mt-4 font-mono text-3xl font-semibold text-primary">
+              {fmt(fiveAccounts)}
+            </div>
+            <div className="mt-2 text-xs text-muted-foreground">
+              Renda passiva real · ~2h/dia
+            </div>
+          </div>
         </div>
       </div>
     </SectionShell>
   );
 }
 
-/* ---------- 09 ---------- */
+/* ---------- 09 PROJEÇÃO REALISTA ---------- */
 
 function Section09() {
   const rows = [
-    { v: "767", l: "views por dia" },
-    { v: "69.030", l: "views por mês" },
-    { v: "10%", l: "clicam no produto" },
-    { v: "6.903", l: "visitantes" },
-    { v: "3%", l: "conversão" },
-    { v: "207", l: "vendas" },
-    { v: "R$ 250,00", l: "ticket médio" },
-    { v: "R$ 51.750,00", l: "total em vendas" },
-    { v: "10%", l: "comissão" },
-    { v: "R$ 5.175,00", l: "seu ganho", highlight: true },
+    { v: "200", l: "perfil views/dia" },
+    { v: "10%", l: "clicam no link" },
+    { v: "20", l: "visitantes/dia" },
+    { v: "600", l: "visitantes/mês" },
+    { v: "2%", l: "conversão PDF" },
+    { v: "12", l: "vendas PDF/mês" },
+    { v: "R$ 29,90", l: "ticket PDF" },
+    { v: "R$ 358,80", l: "venda PDF/mês" },
+    { v: "+ 3", l: "cursos afiliados (R$ 120)" },
+    { v: "+ R$ 360", l: "comissão de curso" },
+    { v: "R$ 718,80", l: "1 conta/mês", highlight: true },
+    { v: "R$ 3.594,00", l: "5 contas/mês", highlight: true },
   ];
   return (
-    <SectionShell id="09" num="09" tag="PROJEÇÃO" title="Exemplo de Projeção">
+    <SectionShell id="09" tag="PROJEÇÃO" title="Cenário Base Realista">
+      <p className="mb-8 text-sm text-muted-foreground">
+        PDF de R$ 29,90 + upsell de curso afiliado (40% de comissão).
+      </p>
       <div className="overflow-hidden rounded-2xl border border-border bg-card">
         {rows.map((r, i) => (
           <div
@@ -601,30 +763,34 @@ function Section09() {
   );
 }
 
-/* ---------- 10 ---------- */
+/* ---------- 10 CICLO ---------- */
 
 function Section10() {
   const steps = [
     {
-      title: "Analisar",
-      desc: "Veja métricas de retenção, cliques e conversão por vídeo.",
+      title: "Testar",
+      desc: "Publica 5 variações de um tema — gancho, ângulo e copy diferentes.",
     },
     {
-      title: "Testar",
-      desc: "Mude gancho, ângulo ou produto, mantendo o resto igual.",
+      title: "Analisar",
+      desc: "Veja qual post deu mais cliques. Salva o que funciona, deleta o flop.",
     },
     {
       title: "Otimizar",
-      desc: "Aproveite o que funcionou e descarte o que travou.",
+      desc: "Repete a fórmula do vencedor — mesma estrutura, conteúdo novo.",
     },
     {
       title: "Escalar",
-      desc: "Multiplique o vídeo vencedor em quantidade e contas.",
+      desc: "Quando 3–4 posts performam, replica em outra conta.",
+    },
+    {
+      title: "Repete",
+      desc: "O ciclo nunca termina. Cada volta: mais eficiente, mais renda.",
     },
   ];
   return (
-    <SectionShell id="10" num="10" tag="LOOP" title="O Ciclo de Crescimento">
-      <div className="grid gap-3 md:grid-cols-4">
+    <SectionShell id="10" tag="CICLO" title="O Loop de Crescimento">
+      <div className="grid gap-3 md:grid-cols-5">
         {steps.map((s, i) => (
           <div
             key={s.title}
@@ -636,33 +802,48 @@ function Section10() {
           </div>
         ))}
       </div>
-      <p className="mt-6 text-sm text-muted-foreground">
-        O ciclo nunca termina. Cada volta deixa a operação mais eficiente.
-      </p>
+      <div className="mt-8 space-y-2 rounded-2xl border border-border bg-card p-6 text-sm">
+        {[
+          ["Semana 1", "Testa (0 vendas, ok)"],
+          ["Semana 2", "Acha 1 fórmula que clica"],
+          ["Semana 3", "Replica 3x a fórmula"],
+          ["Semana 4", "Já gera R$ 200–300/mês"],
+          ["Mês 2", "Abre conta 2, replica tudo"],
+          ["Mês 3", "2 contas × R$ 300 = R$ 600"],
+        ].map(([k, v]) => (
+          <div key={k} className="flex items-baseline justify-between gap-4">
+            <span className="font-mono text-xs uppercase tracking-widest text-primary">
+              {k}
+            </span>
+            <span className="text-right text-foreground/90">{v}</span>
+          </div>
+        ))}
+      </div>
     </SectionShell>
   );
 }
 
-/* ---------- 11 ---------- */
+/* ---------- 11 MAPA ---------- */
 
 function Section11() {
   const chain = [
-    "TikTok",
+    "Instagram Dark",
     "Criar Conta",
-    "1.000 Seguidores",
-    "TikTok Shop",
+    "Nicho",
     "Produção IA",
-    "Mineração",
-    "Afiliação",
-    "Conteúdo",
+    "Imagem",
+    "Copy",
+    "Carousel",
+    "Página de Venda",
+    "PDF ou Afiliado",
+    "Tráfego Orgânico",
     "Monetização",
-    "Analisar",
     "Testar",
     "Otimizar",
     "Escalar",
   ];
   return (
-    <SectionShell id="11" num="11" tag="MAPA" title="Resumo da Operação">
+    <SectionShell id="11" tag="MAPA" title="Resumo da Operação">
       <div className="flex flex-wrap items-center gap-2">
         {chain.map((c, i) => (
           <div key={c} className="flex items-center gap-2">
@@ -675,6 +856,32 @@ function Section11() {
           </div>
         ))}
       </div>
+
+      <div className="mt-10 rounded-2xl border border-primary/30 bg-primary/[0.04] p-8">
+        <div className="font-mono text-xs tracking-widest text-primary">
+          CTA FINAL
+        </div>
+        <h3 className="mt-3 text-2xl font-bold leading-tight">
+          Essa é a estrutura. Agora você quer:
+        </h3>
+        <ul className="mt-6 space-y-3 text-sm text-foreground/90">
+          {[
+            "Ver exemplos de PDFs prontos pra usar",
+            "Template de página de venda (Lovable)",
+            "Prompts de IA pra gerar o conteúdo",
+            "Nicho específico — qual você quer começar?",
+          ].map((it) => (
+            <li key={it} className="flex items-start gap-3">
+              <span className="mt-1 h-3 w-3 rounded-sm border border-primary/60" />
+              <span>{it}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-6 text-sm text-muted-foreground">
+          Me chama aqui que eu monto do jeito que você quer.
+        </p>
+      </div>
+
       <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-primary/60 bg-primary/10 px-5 py-2.5 font-mono text-xs tracking-widest text-primary shadow-[0_0_30px_-10px_var(--neon)]">
         ● OPERAÇÃO COMPLETA
       </div>

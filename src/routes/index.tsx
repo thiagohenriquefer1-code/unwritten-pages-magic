@@ -625,9 +625,9 @@ function Section08() {
   const [niche, setNiche] = useState<Niche>(niches[0]);
   const [conv, setConv] = useState(convOptions[1]);
 
-  // Assumptions: 2.500 views/dia no perfil, 10% cliques no link, upsell 30%
-  const clicksDay = 2500 * 0.1; // 250
-  const clicksMonth = clicksDay * 30; // 7.500
+  // Assumptions: 2.000 views/dia no perfil, 10% cliques no link, upsell 30%
+  const clicksDay = 2000 * 0.1; // 200
+  const clicksMonth = clicksDay * 30; // 6.000
   const pdfSales = Math.round(clicksMonth * conv.v);
   const courseSales = Math.round(pdfSales * 0.3);
   const oneAccount = pdfSales * niche.pdf + courseSales * niche.course;

@@ -625,20 +625,20 @@ function Section08() {
   const [niche, setNiche] = useState<Niche>(niches[0]);
   const [conv, setConv] = useState(convOptions[1]);
 
-  // Assumptions: 200 perfil views/dia, 10% cliques no link
-  const visitorsDay = 200 * 0.1; // 20
-  const visitorsMonth = visitorsDay * 30; // 600
-  const pdfSales = Math.round(visitorsMonth * conv.v);
-  const courseSales = Math.round(pdfSales * 0.3); // 30% pega upsell
+  // Assumptions: 2.500 views/dia no perfil, 10% cliques no link, upsell 30%
+  const clicksDay = 2500 * 0.1; // 250
+  const clicksMonth = clicksDay * 30; // 7.500
+  const pdfSales = Math.round(clicksMonth * conv.v);
+  const courseSales = Math.round(pdfSales * 0.3);
   const oneAccount = pdfSales * niche.pdf + courseSales * niche.course;
-  const fiveAccounts = oneAccount * 5;
+  const twoAccounts = oneAccount * 2;
   const fmt = (n: number) =>
     "R$ " + n.toLocaleString("pt-BR", { maximumFractionDigits: 0 });
 
   return (
     <SectionShell id="08" tag="SIMULADOR" title="Simule Sua Renda">
       <p className="mb-8 text-sm text-muted-foreground">
-        Base: ~200 views/dia, 10% clicam no link, {Math.round(conv.v * 100)}% convertem.
+        Base: ~2.500 views/dia, 10% clicam no link, {Math.round(conv.v * 100)}% convertem.
       </p>
 
       <div className="space-y-6">

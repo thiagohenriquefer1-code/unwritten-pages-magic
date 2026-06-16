@@ -579,7 +579,7 @@ function Section07() {
           </div>
           <div className="mt-6 space-y-4">
             <Stat n="15" label="conteúdos/semana" />
-            <Stat n="3" label="contas rodando" />
+            <Stat n="2" label="contas rodando" />
             <Stat n="45" label="conteúdos/mês" />
             <Stat n="~2h" label="por dia" />
           </div>

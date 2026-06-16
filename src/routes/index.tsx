@@ -579,7 +579,7 @@ function Section07() {
           </div>
           <div className="mt-6 space-y-4">
             <Stat n="15" label="conteúdos/semana" />
-            <Stat n="3" label="contas rodando" />
+            <Stat n="2" label="contas rodando" />
             <Stat n="45" label="conteúdos/mês" />
             <Stat n="~2h" label="por dia" />
           </div>
@@ -593,7 +593,7 @@ function Section07() {
           </div>
           <div className="mt-6 space-y-4">
             <Stat n="30" label="conteúdos/semana" />
-            <Stat n="3" label="contas operando (máx)" />
+            <Stat n="2" label="contas operando (máx)" />
             <Stat n="150+" label="conteúdos/mês" />
             <Stat n="~30 min" label="por dia (monitorar)" />
           </div>
@@ -747,33 +747,34 @@ function Section08() {
 function Section09() {
   const base = [
     { v: "30", l: "posts/mês" },
-    { v: "500", l: "views médias/post" },
-    { v: "15.000", l: "views/mês por conta" },
-    { v: "5%", l: "CTR pra bio/link" },
-    { v: "750", l: "cliques na página/mês" },
+    { v: "1.500", l: "views médias/post" },
+    { v: "45.000", l: "views/mês por conta" },
+    { v: "8%", l: "CTR pra bio/link" },
+    { v: "3.600", l: "cliques na página/mês" },
   ];
-  const ticket = 29.9;
-  const clicks = 750;
+  // PDF R$ 29,90 + upsell de curso afiliado (30% pegam, comissão ~R$ 80)
+  const ticket = 29.9 + 0.3 * 80;
+  const clicks = 3600;
   const scenarios = [
-    { conv: 0.5 },
     { conv: 1 },
     { conv: 2 },
     { conv: 3 },
     { conv: 5 },
+    { conv: 7 },
   ].map((s) => {
     const sales = Math.round((clicks * s.conv) / 100);
     const rev1 = sales * ticket;
+    const fmt = (n: number) =>
+      n.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+        maximumFractionDigits: 0,
+      });
     return {
       conv: `${s.conv}%`,
       sales,
-      rev1: rev1.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-      }),
-      rev3: (rev1 * 3).toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-      }),
+      rev1: fmt(rev1),
+      rev2: fmt(rev1 * 2),
     };
   });
 
@@ -781,7 +782,8 @@ function Section09() {
     <SectionShell id="09" tag="PROJEÇÃO" title="Progressão por Views & Conversão">
       <p className="mb-8 text-sm text-muted-foreground">
         Base: <span className="text-primary">30 posts/mês</span> ×{" "}
-        <span className="text-primary">500 views médias</span> · PDF R$ 29,90.
+        <span className="text-primary">1.500 views médias</span> · PDF R$ 29,90 +
+        upsell curso afiliado (R$ 80 comissão).
       </p>
 
       <div className="overflow-hidden rounded-2xl border border-border bg-card">
@@ -808,7 +810,7 @@ function Section09() {
           <span>Conversão</span>
           <span>Vendas/mês</span>
           <span>1 conta</span>
-          <span>3 contas</span>
+          <span>2 contas</span>
         </div>
         {scenarios.map((s) => (
           <div
@@ -823,15 +825,16 @@ function Section09() {
               {s.rev1}
             </span>
             <span className="font-mono text-lg font-semibold text-primary">
-              {s.rev3}
+              {s.rev2}
             </span>
           </div>
         ))}
       </div>
 
       <p className="mt-6 text-xs text-muted-foreground">
-        Conversões realistas de PDF baixo ticket ficam entre 1–3%. Acima de 5% é
-        cenário otimista (oferta muito bem alinhada com o público).
+        Cenário realista de operação madura fica em 2–3% de conversão — já
+        passando dos R$ 3k/mês com 2 contas. 5–7% é cenário otimizado (oferta,
+        copy e nicho alinhados).
       </p>
     </SectionShell>
   );

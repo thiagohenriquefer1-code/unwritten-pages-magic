@@ -232,7 +232,7 @@ function Section01() {
           <span>Mini aula</span>
         </div>
         <h1 className="mt-6 text-5xl font-bold leading-[1] tracking-tight md:text-7xl">
-          Ganhar com Instagram Dark
+          Instagram Dark IA
         </h1>
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground/90 md:text-xl">
           Sem aparecer, sem conhecer ninguém. Só conteúdo IA, página de venda
